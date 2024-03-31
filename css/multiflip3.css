@@ -1,0 +1,180 @@
+/**
+ * jquery.transitions.js
+ * CSS3 Animations for Image Transitions
+ * http://www.codrops.com
+ *
+ * Copyright 2011, Pedro Botelho / Codrops
+ * Free to use under the MIT license.
+ *
+ * Date: Mon Dec 19 2011
+ */
+ 
+/* has to be changed*/
+
+
+/*******************************************************/
+/***************** Multiflip Effects *******************/
+/*******************************************************/
+.te-wrapper{
+	position: relative;
+	width: 800px;
+	height: 533px;
+	background: url(../img/vichy.png);
+}
+
+.te-perspective{ 
+	-webkit-perspective: 1000;
+}
+.te-transition,
+.te-cover{
+	position: absolute;
+	width: 800px;
+	height:533px;
+	top: 0px;
+	left: 0px;
+}
+.te-transition,
+.te-cover.te-hide,
+.te-images{ display: none; }
+.te-transition.te-show{ display: block; }
+.te-card{
+	-webkit-transform-style: preserve-3d;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+.te-back,
+.te-front{
+	width: 114px;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	-webkit-backface-visibility: hidden;
+}
+.te-front{ z-index: 2; }
+.te-back{ z-index: 1; }
+.te-transition img{ position: absolute; }
+.te-transition .te-flip1 img{ left: 0px; }
+.te-transition .te-flip2 img{ left: -114px; }
+.te-transition .te-flip3 img{ left: -228px; }
+.te-transition .te-flip4 img{ left: -342px; }
+.te-transition .te-flip5 img{ left: -456px; }
+.te-transition .te-flip6 img{ left: -570px; }
+.te-transition .te-flip7 img{ left: -684px; }
+
+.te-multiflip1 .te-flip1,
+.te-multiflip2 .te-flip1,
+.te-multiflip3 .te-flip1{
+	left: 0px;
+}
+.te-multiflip1 .te-flip2,
+.te-multiflip2 .te-flip2,
+.te-multiflip3 .te-flip2{
+	left: 114px;
+}
+.te-multiflip1 .te-flip3,
+.te-multiflip2 .te-flip3,
+.te-multiflip3 .te-flip3{
+	left: 228px;
+}
+.te-multiflip1 .te-flip4,
+.te-multiflip2 .te-flip4,
+.te-multiflip3 .te-flip4{
+	left: 342px;
+}
+.te-multiflip1 .te-flip5,
+.te-multiflip2 .te-flip5,
+.te-multiflip3 .te-flip5{
+	left: 456px;
+}
+.te-multiflip1 .te-flip6,
+.te-multiflip2 .te-flip6,
+.te-multiflip3 .te-flip6{
+	left: 570px;
+}
+.te-multiflip1 .te-flip7,
+.te-multiflip2 .te-flip7,
+.te-multiflip3 .te-flip7{
+	left: 684px;
+}
+
+
+
+/***************** Multiflip3 ********************/
+.te-multiflip3 .te-back{
+	-webkit-transform: rotate3d(0,1,0,-180deg);
+}
+.te-multiflip3.te-show .te-card{
+	-webkit-animation-duration: 1.5s;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-transform-origin: 0% 50%;
+}
+.te-multiflip3 .te-flip1{
+	z-index: 1;
+	-webkit-animation-name: multiflip3_1;
+}
+.te-multiflip3 .te-flip2{
+	z-index: 2;
+	-webkit-animation-name: multiflip3_2;
+}
+.te-multiflip3 .te-flip3{
+	z-index: 3;
+	-webkit-animation-name: multiflip3_3;
+}
+.te-multiflip3 .te-flip4{
+	z-index: 4;
+	-webkit-animation-name: multiflip3_4;
+}
+.te-multiflip3 .te-flip5{
+	z-index: 3;
+	-webkit-animation-name: multiflip3_5;
+}
+.te-multiflip3 .te-flip6{
+	z-index: 2;
+	-webkit-animation-name: multiflip3_6;
+}
+.te-multiflip3 .te-flip7{
+	z-index: 1;
+	-webkit-animation-name: multiflip3_7;
+}
+@-webkit-keyframes multiflip3_1{
+	0% { -webkit-transform: rotate3d(0,1,0,0); }
+	60% { -webkit-transform: rotate3d(0,1,0,180deg) translate3d(-114px,0,0); }
+	100% { -webkit-transform: rotate3d(0,1,0,180deg) translate3d(-114px,0,0); }
+}
+@-webkit-keyframes multiflip3_2{
+	0% { -webkit-transform: rotate3d(0,1,0,0); }
+	5% { -webkit-transform: rotate3d(0,1,0,0); }
+	65% { -webkit-transform: rotate3d(0,1,0,180deg) translate3d(-114px,0,0); }
+	100% { -webkit-transform: rotate3d(0,1,0,180deg) translate3d(-114px,0,0); }
+}
+@-webkit-keyframes multiflip3_3{
+	0% { -webkit-transform: rotate3d(0,1,0,0); }
+	10% { -webkit-transform: rotate3d(0,1,0,0);  }
+	70% { -webkit-transform: rotate3d(0,1,0,180deg) translate3d(-114px,0,0); }
+	100% { -webkit-transform: rotate3d(0,1,0,180deg) translate3d(-114px,0,0); }
+}
+@-webkit-keyframes multiflip3_4{
+	0% { -webkit-transform: rotate3d(0,1,0,0); }
+	15% { -webkit-transform: rotate3d(0,1,0,0); }
+	75% { -webkit-transform: rotate3d(0,1,0,180deg) translate3d(-114px,0,0); }
+	100% { -webkit-transform: rotate3d(0,1,0,180deg) translate3d(-114px,0,0); }
+}
+@-webkit-keyframes multiflip3_5{
+	0% { -webkit-transform: rotate3d(0,1,0,0); }
+	20% { -webkit-transform: rotate3d(0,1,0,0); }
+	80% { -webkit-transform: rotate3d(0,1,0,180deg) translate3d(-114px,0,0); }
+	100% { -webkit-transform: rotate3d(0,1,0,180deg) translate3d(-114px,0,0); }
+}
+@-webkit-keyframes multiflip3_6{
+	0% { -webkit-transform: rotate3d(0,1,0,0); }
+	25% { -webkit-transform: rotate3d(0,1,0,0); }
+	85% { -webkit-transform: rotate3d(0,1,0,180deg) translate3d(-114px,0,0); }
+	100% { -webkit-transform: rotate3d(0,1,0,180deg) translate3d(-114px,0,0); }
+}
+@-webkit-keyframes multiflip3_7{
+	0% { -webkit-transform: rotate3d(0,1,0,0); }
+	30% { -webkit-transform: rotate3d(0,1,0,0); }
+	90% { -webkit-transform: rotate3d(0,1,0,180deg) translate3d(-114px,0,0); }
+	100% { -webkit-transform: rotate3d(0,1,0,180deg) translate3d(-114px,0,0); }
+}
